@@ -1,0 +1,11 @@
+.input-filter {
+    width: 350px;
+}
+
+.filter {
+    margin-bottom: 20px;
+}
+
+.filter > select {
+    margin-left: 10px;
+}

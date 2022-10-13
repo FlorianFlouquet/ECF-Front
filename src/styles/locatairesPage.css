@@ -1,0 +1,124 @@
+.locataire-page {
+    margin-top: 40px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.locataire-page-content-holder {
+    width: 80%;
+    height: 70vh;
+    margin-bottom: 40px;
+}
+
+.locataire-page-content-holder > h2 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.liste-locataires {
+    width: 100%;
+    height: 85%;
+    background-color: rgb(90 147 233);
+    overflow-y: scroll;
+}
+
+.liste-locataires > ul {
+    padding-left: 0;
+}
+
+.form-holder {
+    width: 80%;
+    background-color: rgb(226, 225, 225);
+    margin-bottom: 40px;
+}
+
+.form-locataire {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.form-locataire > div {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-column > label {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.form-column > input {
+    width: 70%;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+.form-column > button {
+    margin-top: 40px;
+    width: 250px;
+    height: 50px;
+}
+
+/*////////////////// VOITURE //////////////////////*/
+
+
+.form-column-v {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-column-v > label {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.form-column-v > input {
+    width: 100%;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+.form-column-v > button {
+    margin-top: 40px;
+    width: 250px;
+    height: 50px;
+}
+
+.form-voiture {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.form-voiture > div {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-voiture button {
+    height: 60px;
+    width: 160px;
+}
