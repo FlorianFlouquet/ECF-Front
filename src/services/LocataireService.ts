@@ -28,6 +28,16 @@ class LocataireService {
             method: 'DELETE'
         }).then(() => this.findAllLocataire()); 
     }
+
+    patchLocataire = (locataire: LocataireModel) => {
+        return fetch(`${API_URL}/${locataire.id}`,{
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(locataire)
+        }).then(() => this.findAllLocataire());  
+    }
 }
 
 export const locataireService = Object.freeze(new LocataireService());

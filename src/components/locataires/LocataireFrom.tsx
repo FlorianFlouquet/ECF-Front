@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
-import { LocataireModel } from '../model/LocataireModel'
+import { LocataireModel } from '../../model/LocataireModel'
 
 interface Props {
     addLocataire: (locataire: LocataireModel) => void

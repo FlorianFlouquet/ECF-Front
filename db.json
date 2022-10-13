@@ -2,43 +2,11 @@
   "locataires": [
     {
       "nom": "Jacques",
-      "prenom": "Francois",
+      "prenom": "Francoise",
       "email": "jacques.francois@mail.com",
       "telephone": "0451235448",
       "dateNaissance": "25/05/1989",
       "id": 1
-    },
-    {
-      "nom": "Tom",
-      "prenom": "Jerry",
-      "email": "tom.jerry@mail.com",
-      "telephone": "0851139999",
-      "dateNaissance": "12/12/2012",
-      "id": 3
-    },
-    {
-      "nom": "Tanpis",
-      "prenom": "Bernard",
-      "email": "bernard.tanpis@mail.com",
-      "telephone": "0666666666",
-      "dateNaissance": "06/06/1966",
-      "id": 4
-    },
-    {
-      "nom": "Juste",
-      "prenom": "Bernadette",
-      "email": "juste.bernadette@mail.com",
-      "telephone": "0122334466",
-      "dateNaissance": "05/11/1999",
-      "id": 5
-    },
-    {
-      "nom": "LeGarsLa",
-      "prenom": "Aurelien",
-      "dateNaissance": "18/02/1959",
-      "email": "legarsla.aurelien@mail.com",
-      "telephone": "0233769656",
-      "id": 6
     },
     {
       "nom": "Flouquet",
@@ -47,6 +15,52 @@
       "email": "florian.flouquet2@mail.com",
       "telephone": "05456464",
       "id": 7
+    },
+    {
+      "nom": "Xavier",
+      "prenom": "Dupont de Ligonnès",
+      "dateNaissance": "23/01/1990",
+      "email": "xavier.dupont@mail.com",
+      "telephone": "02362514",
+      "id": 8
+    }
+  ],
+  "vehicules": [
+    {
+      "marque": "Peugeot",
+      "modele": "207",
+      "etat": "Bien",
+      "prix": "250",
+      "immatriculation": "AXF-12F-45F",
+      "type": "citadine",
+      "id": 1
+    },
+    {
+      "marque": "Renault",
+      "modele": "Clio",
+      "etat": "Tres bien",
+      "prix": "240",
+      "immatriculation": "AXF-12F-45F",
+      "type": "citadine",
+      "id": 2
+    },
+    {
+      "marque": "Peugeot",
+      "modele": "208",
+      "etat": "Correct",
+      "prix": "190",
+      "immatriculation": "AXF-12F-45F",
+      "type": "course",
+      "id": 3
+    },
+    {
+      "marque": "Citroen",
+      "modele": "C3",
+      "etat": "Excellent",
+      "prix": "300",
+      "immatriculation": "AXF-12F-45F",
+      "type": "cabriolet",
+      "id": 4
     }
   ]
 }

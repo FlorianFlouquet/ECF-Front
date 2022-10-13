@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Locataire } from '../components/Locataire'
-import { LocataireFrom } from '../components/LocataireFrom'
+import { Locataire } from '../components/locataires/Locataire'
+import { LocataireFrom } from '../components/locataires/LocataireFrom'
 import { LocataireModel } from '../model/LocataireModel'
 import { locataireService } from '../services/LocataireService'
 import '../styles/locatairesPage.css'
@@ -24,6 +24,10 @@ export const LocatairesPage = () => {
   const deleteLocataire = (id: number) => {
     locataireService.deleteLocataire(id).then((res) => setLocataires(res))
   }
+
+  const editLocataire = (locataire: LocataireModel) => {
+    locataireService.patchLocataire(locataire).then((res) => setLocataires(res))
+  }
   
 
   return (
@@ -34,7 +38,7 @@ export const LocatairesPage = () => {
           <div className='liste-locataires'>
             <ul>
               {locataires.map((item) => (
-                <Locataire data={item} delete={deleteLocataire} />
+                <Locataire data={item} delete={deleteLocataire} editLocataire={editLocataire} />
               ))}
             </ul>
           </div>
