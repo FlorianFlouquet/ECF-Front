@@ -5,5 +5,6 @@ export interface VehiculesModel {
     etat: string,
     immatriculation: string,
     prix: number,
-    id: number
+    id: number,
+    disponible: boolean
 }

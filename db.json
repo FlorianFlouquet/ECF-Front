@@ -33,7 +33,9 @@
       "prix": "250",
       "immatriculation": "AXF-12F-45F",
       "type": "citadine",
-      "id": 1
+      "id": 1,
+      "telephone": "citadinea",
+      "disponible": true
     },
     {
       "marque": "Renault",
@@ -42,16 +44,8 @@
       "prix": "240",
       "immatriculation": "AXF-12F-45F",
       "type": "citadine",
-      "id": 2
-    },
-    {
-      "marque": "Peugeot",
-      "modele": "208",
-      "etat": "Correct",
-      "prix": "190",
-      "immatriculation": "AXF-12F-45F",
-      "type": "course",
-      "id": 3
+      "id": 2,
+      "disponible": true
     },
     {
       "marque": "Citroen",
@@ -60,7 +54,18 @@
       "prix": "300",
       "immatriculation": "AXF-12F-45F",
       "type": "cabriolet",
-      "id": 4
+      "id": 4,
+      "disponible": false
+    },
+    {
+      "marque": "Porsche",
+      "type": "course",
+      "prix": "3500",
+      "modele": "911 GT3",
+      "etat": "Excellent",
+      "immatriculation": "125-RXF-4GF",
+      "id": 6,
+      "disponible": true
     }
   ]
 }
