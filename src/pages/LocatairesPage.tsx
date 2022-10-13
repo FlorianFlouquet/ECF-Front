@@ -21,22 +21,41 @@ export const LocatairesPage = () => {
     handleFilter()
   }, [filterContent])
 
+  /**
+   * Appelle la methode findAllLocataire du service
+   */
   const findAllLocataire = () => {
     locataireService.findAllLocataire().then((res: any) => {setLocataires(res); setSentData(res)});
   }
 
+  /**
+   * Appelle la methode addLocataire du service, puis update le contenu des states locataire et sentData
+   * @param locataire 
+   */
   const addLocataire = (locataire: LocataireModel) => {
-      locataireService.addLocataire(locataire).then((res) => setLocataires(res))
+      locataireService.addLocataire(locataire).then((res) => {setLocataires(res); setSentData(res)})
   }
 
+  /**
+   * Appelle la methode deleteLocataire du service, puis update le contenu des states locataire et sentData
+   * @param id 
+   */
   const deleteLocataire = (id: number) => {
-    locataireService.deleteLocataire(id).then((res) => setLocataires(res))
+    locataireService.deleteLocataire(id).then((res) => {setLocataires(res); setSentData(res)})
   }
 
+  /**
+   * Appelle la methode editLocataire du service, puis update le contenu des states locataire et sentData
+   * @param locataire 
+   */
   const editLocataire = (locataire: LocataireModel) => {
-    locataireService.patchLocataire(locataire).then((res) => setLocataires(res))
+    locataireService.patchLocataire(locataire).then((res) => {setLocataires(res); setSentData(res)})
   }
 
+  /**
+   * Affiche les locatairess qui correspondent à la valeur contenu dans la state filterContent.
+   * Si aucun locataire ne correspond à filterContent, affiche toute la liste des locataires 
+   */
   const handleFilter = () => {
     let array : LocataireModel[];
     switch (filter) {

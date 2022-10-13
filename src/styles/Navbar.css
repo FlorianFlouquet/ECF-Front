@@ -2,6 +2,7 @@ nav {
     display: flex;
     background-color: rgb(226, 225, 225);
     height: 120px;
+    width: 100vw;
 }
 
 .logo-container {
@@ -15,9 +16,8 @@ nav {
 
 .nav-items {
     height: 100%;
-    padding-left: 150px;
+    width: 50%;
     display: flex;
-    gap: 100px;
     align-items: center;
     justify-content: space-around;
 }

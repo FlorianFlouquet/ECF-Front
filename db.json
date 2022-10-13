@@ -6,22 +6,6 @@
       "email": "jacques.francois@mail.com",
       "telephone": "0451235448",
       "dateNaissance": "25/05/1989",
-      "id": 1
-    },
-    {
-      "nom": "Jacques",
-      "prenom": "Francoise",
-      "email": "jacques.francois@mail.com",
-      "telephone": "0451235448",
-      "dateNaissance": "25/05/1989",
-      "id": 2
-    },
-    {
-      "nom": "Jacques",
-      "prenom": "Francoise",
-      "email": "jacques.francois@mail.com",
-      "telephone": "0451235448",
-      "dateNaissance": "25/05/1989",
       "id": 3
     },
     {
@@ -30,7 +14,31 @@
       "dateNaissance": "23/01/1990",
       "email": "xavier.dupont@mail.com",
       "telephone": "02362514",
-      "id": 4
+      "id": 5
+    },
+    {
+      "nom": "Flouquet",
+      "prenom": "Florian",
+      "dateNaissance": "18/05/1995",
+      "email": "florian.flouquet2@mail.com",
+      "telephone": "05456464",
+      "id": 7
+    },
+    {
+      "nom": "Xavier",
+      "prenom": "Dupont de Ligonnès",
+      "dateNaissance": "23/01/1990",
+      "email": "xavier.dupont@mail.com",
+      "telephone": "02362514",
+      "id": 8
+    },
+    {
+      "nom": "Jacques",
+      "prenom": "Francoise",
+      "email": "jacques.francois@mail.com",
+      "telephone": "0451235448",
+      "dateNaissance": "25/05/1989",
+      "id": 3
     },
     {
       "nom": "Xavier",
@@ -61,7 +69,7 @@
     {
       "marque": "Peugeot",
       "modele": "207",
-      "etat": "Bien",
+      "etat": "Tres bien",
       "prix": "250",
       "immatriculation": "AXF-12F-45F",
       "type": "citadine",

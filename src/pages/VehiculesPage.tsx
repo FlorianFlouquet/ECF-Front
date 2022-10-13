@@ -22,22 +22,41 @@ export const VehiculesPage = () => {
     handleFilter()
   }, [filterContent])
 
+  /**
+   * Appelle la methode findAllVehicules du service
+   */
   const findAllVehicules = () => {
     vehiculesService.findAllVehicules().then((res: any) => {setVehicules(res); setSentData(res)})
   }
 
+  /**
+   * Appelle la methode addVehicules du service et update le contenu des states vehicules et sentData
+   * @param vehicule 
+   */
   const addVehicule = (vehicule: VehiculesModel) => {
-      vehiculesService.addVehicules(vehicule).then((res) => setVehicules(res))
+      vehiculesService.addVehicules(vehicule).then((res) => {setVehicules(res); setSentData(res)})
   }
 
+  /**
+   * Appelle la methode deleteVehicules du service et update le contenu des states vehicules et sentData
+   * @param id 
+   */
   const deleteVehicule = (id: number) => {
-    vehiculesService.deleteVehicule(id).then((res) => setVehicules(res))
+    vehiculesService.deleteVehicule(id).then((res) => {setVehicules(res); setSentData(res)})
   }
 
+  /**
+   * Appelle la methode edit Vehicules du service et update le contenu des states vehicules et sentData
+   * @param id 
+   */
   const editVehicule = (vehicule: VehiculesModel) => {
-    vehiculesService.patchVehicule(vehicule).then((res) => setVehicules(res))
+    vehiculesService.patchVehicule(vehicule).then((res) => {setVehicules(res); setSentData(res)})
   }
 
+  /**
+   * Affiche les vehicules qui correspondent à la valeur contenu dans la state filterContent.
+   * Si aucun vehicule ne correspond à filterContent, affiche toute la liste des vehicules 
+   */
   const handleFilter = () => {
     let array : VehiculesModel[];
     switch (filter) {

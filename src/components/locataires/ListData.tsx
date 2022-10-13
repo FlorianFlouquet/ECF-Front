@@ -9,10 +9,17 @@ interface Props {
 
 export const ListData = (props: Props) => {
 
+    /**
+     * Appelle la methode delete du parent
+     * @param id 
+     */
     const deleteLocataire = (id: number) => {
         props.delete(id);
     }
 
+    /**
+     * Appelle la methode changeEdit du parent
+     */
     const changeEdit = () => {
         props.changeEdit();
     }

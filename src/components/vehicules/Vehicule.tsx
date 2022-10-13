@@ -14,14 +14,25 @@ export const Vehicule = (props : Props) => {
 
     const [canEdit, setCanEdit] = useState(false)
 
+    /**
+     * Appelle la methode delete du parent
+     * @param id 
+     */
     const deleteVehicule = (id: number) => {
         props.delete(id);
     }
 
+    /**
+     * Inverse la valeur dans la state canEdit pour soit afficher le formulaire, soit afficher les données du véhicule
+     */
     const changeEdit = () => {
         setCanEdit(!canEdit);
     }
 
+    /**
+     * appelle la méthode editVehicule du parent
+     * @param vehicule 
+     */
     const editVehicule = (vehicule: VehiculesModel) => {
         props.editVehicule(vehicule);
     }

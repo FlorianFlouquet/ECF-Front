@@ -12,17 +12,27 @@ export const ListEditV = (props: Props) => {
 
     const [vehicule, setVehicule] = useState<VehiculesModel>(props.data)
 
+    /**
+     * Change la valeur d'une clé dans la state vehicule 
+     * @param event 
+     */
     const handleChange = (event : ChangeEvent<HTMLInputElement>) => {
         setVehicule({...vehicule, [event.target.name] : event.target.value});
     } 
 
+    /**
+     * appelle la méthode delete du parents avec un id en parametre
+     */
     const deleteLocataire = (id: number) => {
         props.delete(id);
     }
 
+    /**
+     * Modifie la valeur de la state locataire du parent
+     * Puis appelle la methode changeEdit du parent
+     * @param event 
+     */
     const handleSubmit = (event: FormEvent<HTMLButtonElement>) => {
-        console.log("oui");
-        
         event.preventDefault();
         props.editLocataire(vehicule);
         props.changeEdit();

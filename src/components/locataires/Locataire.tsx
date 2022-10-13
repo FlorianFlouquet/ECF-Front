@@ -14,14 +14,25 @@ export const Locataire = (props : Props) => {
 
     const [canEdit, setCanEdit] = useState(false)
 
+    /**
+     * Appelle la methode delete du parent
+     * @param id 
+     */
     const deleteLocataire = (id: number) => {
         props.delete(id);
     }
 
+    /**
+     * Inverse la valeur de canEdit pour soit afficher le formulaire, soit afficher les données du locataire
+     */
     const changeEdit = () => {
         setCanEdit(!canEdit);
     }
 
+    /**
+     * Appelle la méthode editLocataire du parent
+     * @param locataire 
+     */
     const editLocataire = (locataire: LocataireModel) => {
         props.editLocataire(locataire);
     }

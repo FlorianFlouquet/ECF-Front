@@ -12,17 +12,26 @@ export const ListEdit = (props: Props) => {
 
     const [locataire, setLocataire] = useState<LocataireModel>(props.data)
 
+    /**
+     * Modifie la valeur d'une clé de la state locataire
+     * @param event 
+     */
     const handleChange = (event : ChangeEvent<HTMLInputElement>) => {
         setLocataire({...locataire, [event.target.name] : event.target.value});
     } 
 
+    /**
+     * Appelle la methode delete du parent
+     */
     const deleteLocataire = (id: number) => {
         props.delete(id);
     }
 
+    /**
+     * Appelle la methode editlocataire puis changeEdit du parent
+     */
     const handleSubmit = (event: FormEvent<HTMLButtonElement>) => {
-        console.log("oui");
-        
+    
         event.preventDefault();
         props.editLocataire(locataire);
         props.changeEdit();
