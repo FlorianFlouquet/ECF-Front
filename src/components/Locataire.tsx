@@ -4,11 +4,17 @@ import '../styles/locataire.css'
 
 interface Props {
     data: LocataireModel
+    delete: (id: number) => void
 }
 
 export const Locataire = (props : Props) => {
+
+    const deleteLocataire = (id: number) => {
+        props.delete(id);
+    }
+
     return (
-        <li className='locataire'>
+        <li  key={props.data.dateNaissance} className='locataire'>
             <div className='locataire-content'>
                 <div>
                     <h2>{props.data.nom}</h2>
@@ -20,7 +26,7 @@ export const Locataire = (props : Props) => {
                     <p>Téléphone : {props.data.telephone}</p>
                 </div>
                 <div>
-                    <button>Supprimer</button>
+                    <button onClick={() => deleteLocataire(props.data.id)}>Supprimer</button>
                     <button>Modifier</button>
                 </div>
             </div>

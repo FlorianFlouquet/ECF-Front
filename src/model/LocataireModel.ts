@@ -3,5 +3,6 @@ export interface LocataireModel {
     prenom: string,
     email: string,
     telephone: number,
-    dateNaissance: string
+    dateNaissance: string,
+    id: number
 }

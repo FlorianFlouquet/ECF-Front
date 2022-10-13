@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import { Locataire } from '../components/Locataire'
+import { LocataireFrom } from '../components/LocataireFrom'
 import { LocataireModel } from '../model/LocataireModel'
+import { locataireService } from '../services/LocataireService'
 import '../styles/locatairesPage.css'
 
 export const LocatairesPage = () => {
 
-  const [locataires, setLocataires] = useState<LocataireModel[]>([])
+  const [locataires, setLocataires] = useState<LocataireModel[]>([{nom: "", prenom: "", dateNaissance: "", telephone: 0, email: "", id: 0}])
 
   useEffect(() => {
-    setLocataires([
-      {nom: "George", prenom: "Francois", email: "george.francois@mail.com", telephone: 0o425236145, dateNaissance: "05/12/1989"},
-      {nom: "Jacques", prenom: "Francois", email: "jacques.francois@mail.com", telephone: 0o524236145, dateNaissance: "05/12/1989"},
-      {nom: "George", prenom: "Francois", email: "george.francois@mail.com", telephone: 0o425236145, dateNaissance: "05/12/1989"},
-      {nom: "Jacques", prenom: "Francois", email: "jacques.francois@mail.com", telephone: 0o524236145, dateNaissance: "05/12/1989"},
-      {nom: "George", prenom: "Francois", email: "george.francois@mail.com", telephone: 0o425236145, dateNaissance: "05/12/1989"},
-      {nom: "Jacques", prenom: "Francois", email: "jacques.francois@mail.com", telephone: 0o524236145, dateNaissance: "05/12/1989"},
-    ])
+    findAllLocataire()
   }, [])
+
+  const findAllLocataire = () => {
+    locataireService.findAllLocataire().then((res: any) => setLocataires(res))
+  }
+
+  const addLocataire = (locataire: LocataireModel) => {
+      locataireService.addLocataire(locataire).then((res) => setLocataires(res))
+  }
+
+  const deleteLocataire = (id: number) => {
+    locataireService.deleteLocataire(id).then((res) => setLocataires(res))
+  }
   
 
   return (
@@ -27,38 +34,14 @@ export const LocatairesPage = () => {
           <div className='liste-locataires'>
             <ul>
               {locataires.map((item) => (
-                <Locataire data={item}/>
+                <Locataire data={item} delete={deleteLocataire} />
               ))}
             </ul>
           </div>
         </div>
         {/* <button>Ajouter un locataire</button> */}
         <div className='form-holder'>
-          <form className='form-locataire' action="submit">
-            <div>
-              <div className='form-column'>
-                <label htmlFor="nom" >Nom</label>
-                <input type="text" name='nom' id='nom' />
-                <label htmlFor="prenom" >Prenom</label>
-                <input type="text" name='prenom' id='prenom' />
-              </div>
-            </div>
-            <div>
-              <div className='form-column'>
-                <label htmlFor="dateNaissance" >Date de naissance</label>
-                <input type="text" name='dateNaissance' id='dateNaissance' />
-                <label htmlFor="email" >Email</label>
-                <input type="text" name='email' id='email' />
-              </div>    
-            </div>
-            <div>
-              <div className='form-column'>
-                <label htmlFor="" >Telephone</label>
-                <input type="text" name='email' id='email' />
-                <button type='submit'>Ajouter</button>
-              </div>
-            </div>
-          </form>
+          <LocataireFrom addLocataire={addLocataire} />
         </div>
       </div>
     </>

@@ -1,0 +1,52 @@
+{
+  "locataires": [
+    {
+      "nom": "Jacques",
+      "prenom": "Francois",
+      "email": "jacques.francois@mail.com",
+      "telephone": "0451235448",
+      "dateNaissance": "25/05/1989",
+      "id": 1
+    },
+    {
+      "nom": "Tom",
+      "prenom": "Jerry",
+      "email": "tom.jerry@mail.com",
+      "telephone": "0851139999",
+      "dateNaissance": "12/12/2012",
+      "id": 3
+    },
+    {
+      "nom": "Tanpis",
+      "prenom": "Bernard",
+      "email": "bernard.tanpis@mail.com",
+      "telephone": "0666666666",
+      "dateNaissance": "06/06/1966",
+      "id": 4
+    },
+    {
+      "nom": "Juste",
+      "prenom": "Bernadette",
+      "email": "juste.bernadette@mail.com",
+      "telephone": "0122334466",
+      "dateNaissance": "05/11/1999",
+      "id": 5
+    },
+    {
+      "nom": "LeGarsLa",
+      "prenom": "Aurelien",
+      "dateNaissance": "18/02/1959",
+      "email": "legarsla.aurelien@mail.com",
+      "telephone": "0233769656",
+      "id": 6
+    },
+    {
+      "nom": "Flouquet",
+      "prenom": "Florian",
+      "dateNaissance": "18/05/1995",
+      "email": "florian.flouquet2@mail.com",
+      "telephone": "05456464",
+      "id": 7
+    }
+  ]
+}
