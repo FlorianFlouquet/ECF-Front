@@ -9,10 +9,19 @@ export const LocataireFrom = (props: Props) => {
 
     const [newLocataire, setNewLocataire] = useState<LocataireModel>({nom:'', prenom: '',dateNaissance: '', email: '', telephone: 0, id: 0})
 
+    /**
+     * Modifie la valeur d'une clé dans la state newLocataire
+     * @param event 
+     */
     const handleChange = (event : ChangeEvent<HTMLInputElement>) => {
         setNewLocataire({...newLocataire, [event.target.name] : event.target.value});
     } 
 
+    /**
+     * Appelle la methode addLocataire du parent avec la state newLocataire en parametre
+     * Reinitialise la valeur de newLocataire
+     * @param event 
+     */
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         props.addLocataire(newLocataire);

@@ -10,10 +10,19 @@ export const VehiculeFrom = (props: Props) => {
 
     const [newVehicule, setNewVehicule] = useState<VehiculesModel>({marque: "", type: "", prix: 0, modele: "", etat: "", immatriculation: "", id: 0, disponible: true})
 
+    /**
+     * Change la valeur d'une clé dans la state newVehicule
+     * @param event 
+     */
     const handleChange = (event : ChangeEvent<HTMLInputElement>) => {
         setNewVehicule({...newVehicule, [event.target.name] : event.target.value});
     } 
 
+    /**
+     * Appelle la methode addVehicule du parent avec la contenu de la state newVehicule en parametre
+     * Reinitialise la valeur de la state newVehicule
+     * @param event 
+     */
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         props.addVehicule(newVehicule);

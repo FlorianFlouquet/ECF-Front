@@ -3,6 +3,10 @@ import { LocataireModel } from "../model/LocataireModel";
 const API_URL = "http://localhost:3000/locataires"
 
 class LocataireService {
+    /**
+     * Recupere tous les locataires dans la base de données
+     * @returns 
+     */
     findAllLocataire = () : any => {
         return fetch(API_URL).then(res => {
             return res.json();
@@ -13,6 +17,11 @@ class LocataireService {
         })
     }
 
+    /**
+     * Ajoute un locataire à la base de donnée
+     * @param locataire 
+     * @returns 
+     */
     addLocataire = (locataire: LocataireModel) => {
         return fetch(API_URL, {
             method: 'POST',
@@ -23,12 +32,22 @@ class LocataireService {
         }).then(() => this.findAllLocataire());
     }
 
+    /**
+     * Supprime un locataire à la base de donnée
+     * @param id 
+     * @returns 
+     */
     deleteLocataire = (id : number) => {
         return fetch(`${API_URL}/${id}`, {
             method: 'DELETE'
         }).then(() => this.findAllLocataire()); 
     }
 
+    /**
+     * Modifie un locataire à la base de donnée
+     * @param locataire 
+     * @returns 
+     */
     patchLocataire = (locataire: LocataireModel) => {
         return fetch(`${API_URL}/${locataire.id}`,{
             method: "PATCH",
