@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    background-color: rgb(226, 225, 225);
+    height: 160px;
+}
+
+.logo-container {
+    height: 160px;
+    width: 160px;
+}
+
+.logo-container > img {
+    width: 100%;
+}
+
+.nav-items {
+    height: 100%;
+    padding-left: 200px;
+    display: flex;
+    gap: 200px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-items > a {
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
+}
