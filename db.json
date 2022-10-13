@@ -1,0 +1,66 @@
+{
+  "locataires": [
+    {
+      "nom": "Jacques",
+      "prenom": "Francoise",
+      "email": "jacques.francois@mail.com",
+      "telephone": "0451235448",
+      "dateNaissance": "25/05/1989",
+      "id": 1
+    },
+    {
+      "nom": "Flouquet",
+      "prenom": "Florian",
+      "dateNaissance": "18/05/1995",
+      "email": "florian.flouquet2@mail.com",
+      "telephone": "05456464",
+      "id": 7
+    },
+    {
+      "nom": "Xavier",
+      "prenom": "Dupont de Ligonnès",
+      "dateNaissance": "23/01/1990",
+      "email": "xavier.dupont@mail.com",
+      "telephone": "02362514",
+      "id": 8
+    }
+  ],
+  "vehicules": [
+    {
+      "marque": "Peugeot",
+      "modele": "207",
+      "etat": "Bien",
+      "prix": "250",
+      "immatriculation": "AXF-12F-45F",
+      "type": "citadine",
+      "id": 1
+    },
+    {
+      "marque": "Renault",
+      "modele": "Clio",
+      "etat": "Tres bien",
+      "prix": "240",
+      "immatriculation": "AXF-12F-45F",
+      "type": "citadine",
+      "id": 2
+    },
+    {
+      "marque": "Peugeot",
+      "modele": "208",
+      "etat": "Correct",
+      "prix": "190",
+      "immatriculation": "AXF-12F-45F",
+      "type": "course",
+      "id": 3
+    },
+    {
+      "marque": "Citroen",
+      "modele": "C3",
+      "etat": "Excellent",
+      "prix": "300",
+      "immatriculation": "AXF-12F-45F",
+      "type": "cabriolet",
+      "id": 4
+    }
+  ]
+}

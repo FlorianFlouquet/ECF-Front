@@ -1,12 +1,12 @@
 nav {
     display: flex;
     background-color: rgb(226, 225, 225);
-    height: 160px;
+    height: 120px;
 }
 
 .logo-container {
-    height: 160px;
-    width: 160px;
+    height: 120px;
+    width: 120px;
 }
 
 .logo-container > img {
@@ -15,7 +15,7 @@ nav {
 
 .nav-items {
     height: 100%;
-    padding-left: 200px;
+    padding-left: 150px;
     display: flex;
     gap: 200px;
     align-items: center;
