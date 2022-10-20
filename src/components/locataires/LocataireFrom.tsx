@@ -43,7 +43,7 @@ export const LocataireFrom = (props: Props) => {
             <label htmlFor="dateNaissance" >Date de naissance</label>
             <input onChange={(event) => handleChange(event)} value={newLocataire.dateNaissance} type="text" name='dateNaissance' id='dateNaissance' />
             <label htmlFor="email" >Email</label>
-            <input onChange={(event) => handleChange(event)} value={newLocataire.email} type="text" name='email' id='email' />
+            <input onChange={(event) => handleChange(event)} value={newLocataire.email} type="email" name='email' id='email' />
             </div>    
         </div>
         <div>

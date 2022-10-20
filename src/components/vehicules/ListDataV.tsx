@@ -28,7 +28,7 @@ export const ListDataV = (props: Props) => {
     return (
         <>
             <div>
-                <h2>{props.data.marque}</h2>
+                <h2>{props.data.modele}</h2>
                 <h3>{props.data.prix}€</h3>
                 <figure className='voiture'>
                     <img src={voitureImg} alt="car-image    " />
@@ -38,7 +38,7 @@ export const ListDataV = (props: Props) => {
                 <p>Immatriculation : {props.data.immatriculation}</p>
                 <p>Etat : {props.data.etat}</p>
                 <p>Type : {props.data.type}</p>
-                <p>Modele : {props.data.modele}</p>
+                <p>Modele : {props.data.marque}</p>
                 <p>Disponible : {props.data.disponible ? "Oui" : "Non"}</p>
             </div>
             <div>

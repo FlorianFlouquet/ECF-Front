@@ -1,0 +1,38 @@
+.location {
+    width: 98%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(223 223 223);
+    margin: 10px;
+}
+
+.location > div:nth-child(1) {
+    width: 30%;
+}
+
+.location > div:nth-child(2) {
+    width: 30%;
+}
+
+.location > div:nth-child(3) {
+    width: 30%;
+}
+
+.location > div:nth-child(4) {
+    width: 10%;
+}
+
+.location figure {
+    width: 80%;
+    margin: 5px;
+}
+
+.location figure > img {
+    width: 100%;
+}
+
+.location > div > button {
+    height: 40px;
+    width: 70px;
+}

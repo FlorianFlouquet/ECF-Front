@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { VehiculesModel } from '../../model/VehiculeModel'
 import { ListEditV } from './ListEditV'
-import '../../styles/locataire.css'
+import '../../styles/vehicule.css'
 import { ListDataV } from './ListDataV'
 
 interface Props {
@@ -39,7 +39,7 @@ export const Vehicule = (props : Props) => {
 
     return (
         <li  key={props.data.modele} className='locataire'>
-            <div className='locataire-content'>
+            <div className='vehicule-content'>
                 {canEdit ? 
                     <ListEditV delete={deleteVehicule} editLocataire={editVehicule} changeEdit={changeEdit} data={props.data} />
                     :

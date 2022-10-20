@@ -21,6 +21,14 @@ export const ListEditV = (props: Props) => {
     } 
 
     /**
+     * Change la disponibilité du véhicule
+     * @param event 
+     */
+    const handleChangeDispo = (event : ChangeEvent<HTMLInputElement>) => {
+        setVehicule({...vehicule, disponible : event.target.checked})
+    }
+
+    /**
      * appelle la méthode delete du parents avec un id en parametre
      */
     const deleteLocataire = (id: number) => {
@@ -41,15 +49,15 @@ export const ListEditV = (props: Props) => {
     return (
         <>
             <div>
-                <p>Marque: <input name='marque' onChange={(event) => handleChange(event)} type="text" value={vehicule.marque}/></p>
+                <p>modele: <input name='modele' onChange={(event) => handleChange(event)} type="text" value={vehicule.modele}/></p>
                 <p>Prix: <input name='prix' onChange={(event) => handleChange(event)} type="text" value={vehicule.prix}/></p>
             </div>
             <div>
                 <p>Immatriculation : <input name='immatriculation' onChange={(event) => handleChange(event)} type="text" value={vehicule.immatriculation} /></p>
                 <p>Etat : <input name='etat' onChange={(event) => handleChange(event)} type="text" value={vehicule.etat} /></p>
                 <p>Type : <input name='type' onChange={(event) => handleChange(event)} type="text" value={vehicule.type} /></p>
-                <p>Modele : <input name='modele' onChange={(event) => handleChange(event)} type="text" value={vehicule.modele} /></p>
-                <p>disponible: <input name='disponibilite' onChange={(event) => handleChange(event)} type="text" value={"Oui"} /></p>
+                <p>Marque : <input name='marque' onChange={(event) => handleChange(event)} type="text" value={vehicule.marque} /></p>
+                <p>disponible: <input name='disponible' onChange={(event) => handleChangeDispo(event)} type="checkbox" checked={vehicule.disponible} /></p>
             </div>
             <div>
                 <button onClick={() => deleteLocataire(props.data.id)}>Supprimer</button>
