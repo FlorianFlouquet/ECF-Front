@@ -1,7 +1,84 @@
+.gras {
+    font-weight: bolder;
+}
+
+.error {
+    color: red;
+    font-style: italic;
+}
+
+.price {
+    font-size: 1.5rem;
+}
+
 .voiture-location {
     width: 300px;
 }
 
 .voiture-location > img {
     width: 100%;
+}
+
+.louer-page {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.louer-page > div {
+    width: 80%;
+}
+
+.voiture-details {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.voiture-details > div > h2 {
+    font-size: 2rem;
+}
+
+.voiture-details > div > h3 {
+    margin-top: -10px;
+    font-size: 1.8rem;
+}
+
+.voiture-details > div > h4 {
+    margin-top: -10px;
+    font-size: 1.2rem;
+}
+
+.trait {
+    width: 80%;
+    height: 1px;
+    background-color: rgb(40, 28, 199);
+    margin-bottom: 20px;
+}
+
+.form-louer {
+    display: flex;
+}
+
+.choix-locataire {
+    width: 40%;
+}
+
+.form-louer > form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-louer > form > input {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.form-louer > form > button {
+    margin-top: 10px;
+    width: 250px;
+    height: 40px;
 }

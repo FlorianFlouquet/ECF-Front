@@ -12,7 +12,7 @@ export const VehiculeLocation = (props: Props) => {
     <li  key={props.data.modele} className='locataire'>
             <div className='locataire-content'>
                 <div>
-                    <h2>{props.data.marque}</h2>
+                    <h2>{props.data.modele}</h2>
                     <h3>{props.data.prix}€</h3>
                     <figure className='voiture'>
                         <img src={voitureImg} alt="car-image" />
@@ -22,14 +22,14 @@ export const VehiculeLocation = (props: Props) => {
                     <p>Immatriculation : {props.data.immatriculation}</p>
                     <p>Etat : {props.data.etat}</p>
                     <p>Type : {props.data.type}</p>
-                    <p>Modele : {props.data.modele}</p>
+                    <p>Modele : {props.data.marque}</p>
                 </div>
                 <div>
                     {props.data.disponible
                     ?   <Link to="/louer" state={props.data}>
-                            <button>Louer</button>
+                            <button className='button-louer'>Louer</button>
                         </Link>
-                    : <h2>INDISPONIBLE</h2>
+                    : <h4 className='indisponible'>INDISPONIBLE</h4>
                     }
                 </div>
             </div>

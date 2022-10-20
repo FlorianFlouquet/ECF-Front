@@ -103,8 +103,8 @@ export const LocatairesPage = () => {
           <FilterLocataire setFilter={setFilterContent} changeFilter={setFilter}/>
           <div className='liste-locataires'>
             <ul>
-              {sentData.map((item) => (
-                <Locataire data={item} delete={deleteLocataire} editLocataire={editLocataire} />
+              {sentData.map((item, index) => (
+                <Locataire key={index} data={item} delete={deleteLocataire} editLocataire={editLocataire} />
               ))}
             </ul>
           </div>

@@ -45,6 +45,7 @@ export const LouerPage = () => {
     });
 
     const [dateInvalid, setDateInvalid] = useState(false);
+    const [selectedLocataire, setSelectedLocataire] = useState(false);
 
     // useEffects 
 
@@ -126,29 +127,58 @@ export const LouerPage = () => {
         }
     }
 
+    /**
+     * Si la date de debut est bien anterieur à la date de fin, alors change la disponibilité du véhicule,
+     * envoie le detaillé de la location au addLocation et renvoie l'utilisateur vers la page la page location
+     * @param event 
+     */
     const handleSubmit = (event : FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        if(isDatesCorrect()) {
+        if(isDatesCorrect() && hasSelectedLocataire()) {
             changeDisponibility();
             addLocation(location);
-        } else {
+            window.location.replace('/location');
+        } else if(!hasSelectedLocataire()) {
+            setSelectedLocataire(true);
+        }
+        else {
             setDateInvalid(true);
         }
     }
 
+    /**
+     * Appelle la methode addLocation du service
+     * @param newLocation 
+     */
     const addLocation = (newLocation : LocationModel) => {
         locationService.addLocation(newLocation);
     }
 
+    /**
+     * Change la disponibilité du véhicule à false
+     */
     const changeDisponibility = () => {
         vehicule.disponible = false;
         vehiculesService.patchVehicule(vehicule);
     }
 
+    /**
+     * Verifie que la date de debut est anterieur à la date de fin
+     * @returns 
+     */
     const isDatesCorrect = () : boolean => {
         return location.dateFin.getTime() > location.dateDebut.getTime()
     }
 
+    const hasSelectedLocataire = () : boolean => {
+        return location.locataire.nom !== "";
+    }
+
+    /**
+     * Recupere la date d'aujourd'hui et la retourne au format string pour l'utiliser dans l'attribut "min" de l'input date.
+     * Ainsi l'utilisateur ne peut pas séléctionner de date antérieur à celle d'aujourd'hui
+     * @returns 
+     */
     const getTodayDateInString = () : string => {
         const date = new Date();
         let year = date.getFullYear();
@@ -173,43 +203,53 @@ export const LouerPage = () => {
 
     return (
         <>
-            {vehicule && 
-                <div>
-                    <figure className='voiture-location'>
-                        <img src={voitureImg} alt="voiture-image" />
-                    </figure>
-                    <h2>{vehicule.marque}</h2>
-                    <h3>{vehicule.modele}</h3>
-                    <h3>{vehicule.prix}€ / jour</h3>
-                </div>
-            }
-            <select onChange={handleSelect}>
-                <option value="">Veuillez choisir un locataire</option>
-                {locataires?.map((item) => (
-                    <option key={item.id} value={item.id}>{item.nom} {item.prenom}</option>
-                ))}
-            </select>
-            {location.locataire.nom !== "" &&
-                <div>
-                    <h2>Locataire choisi :</h2>
-                    <div>
-                        <p>{location.locataire.nom}</p>
-                        <p>{location.locataire.prenom}</p>
-                        <p>{location.locataire.dateNaissance}</p>
-                        <p>{location.locataire.email}</p>
-                        <p>{location.locataire.telephone}</p>
+            <div className='louer-page'>
+                {vehicule && 
+                    <div className='voiture-details'>
+                        <figure className='voiture-location'>
+                            <img src={voitureImg} alt="voiture-image" />
+                        </figure>
+                        <div>
+                            <h2>{vehicule.marque}</h2>
+                            <h3>{vehicule.modele}</h3>
+                            <h4>{vehicule.prix}€ / jour</h4>
+                        </div>
                     </div>
+                }
+                <span className='trait'></span>
+                <div className='form-louer'>
+                    <div className='choix-locataire'>
+                        <select onChange={handleSelect}>
+                            <option value="">Veuillez choisir un locataire</option>
+                            {locataires?.map((item) => (
+                                <option key={item.id} value={item.id}>{item.nom} {item.prenom}</option>
+                            ))}
+                        </select>
+                        {selectedLocataire && <p className='error'>Choisissez un locataire</p>}
+                        {location.locataire.nom !== "" &&
+                            <div className=''>
+                                <h2>Locataire choisi :</h2>
+                                <div>
+                                    <p><span className='gras'>Nom:</span> {location.locataire.nom}</p>
+                                    <p><span className='gras'>Prenom:</span> {location.locataire.prenom}</p>
+                                    <p><span className='gras'>Né le:</span> {location.locataire.dateNaissance}</p>
+                                    <p><span className='gras'>Email:</span> {location.locataire.email}</p>
+                                    <p><span className='gras'>Tel:</span> {location.locataire.telephone}</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <form action='submit' onSubmit={handleSubmit}>
+                        {dateInvalid && <p className='error'>La location ne peut pas se terminer avant d'avoir commencée</p>}
+                        <label htmlFor="dateDebut">Date de debut de location :</label>
+                        <input onChange={handleChange} min={new Date().toISOString().slice(0, -14)} type="date" name='dateDebut' />
+                        <label htmlFor="dateFin">Date de fin de location :</label>
+                        <input onChange={handleChange} min={new Date().toISOString().slice(0, -14)} type="date" name='dateFin' />
+                        <div>Prix total de la location : <span className='gras price'>{prix}€</span></div>
+                        <button>Valider</button>
+                    </form>
                 </div>
-            }
-            {dateInvalid && <h2>La location ne peut se terminer avant d'avoir commencée</h2>}
-            <form action='submit' onSubmit={handleSubmit}>
-                <label htmlFor="dateDebut">Date de debut de location</label>
-                <input onChange={handleChange} min={new Date().toISOString().slice(0, -14)} type="date" name='dateDebut' />
-                <label htmlFor="dateFin">Date de fin de location</label>
-                <input onChange={handleChange} min={new Date().toISOString().slice(0, -14)} type="date" name='dateFin' />
-                <div>Prix total de la location : {prix}€</div>
-                <button>Valider</button>
-            </form>
+            </div>
         </>
     )
 }

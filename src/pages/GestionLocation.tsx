@@ -12,18 +12,22 @@ export const GestionLocation = () => {
     useEffect(() => {
         locationService.findAllLocations().then((data) => setLocations(data));
     }, [])
+
+    const deleteLocation = (id : Number) => {
+        locationService.deleteLocaction(id).then((res) => setLocations(res))
+    }
     
 
     return (
         <>
             <>
-                <div className='locataire-page'>
-                    <div className='locataire-page-content-holder'>
+                <div className='locatation-page'>
+                    <div className='locatation-page-content-holder'>
                         <h2>Liste des locations</h2>
                         <div className='liste-locataires'>
                             <ul>
                             {locations && locations.map((item, index) => (
-                                <Location key={index} data={item} />
+                                <Location key={index} data={item} delete={deleteLocation} />
                             ))}
                             </ul>
                         </div>

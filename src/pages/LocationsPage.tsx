@@ -21,8 +21,8 @@ export const LocationsPage = () => {
     }
     return (
         <>
-            <div className='locataire-page'>
-                <div className='locataire-page-content-holder'>
+            <div className='locatation-page'>
+                <div className='locatation-page-content-holder'>
                     <h2>Location de vehicules</h2>
                     <div className='liste-locataires'>
                         <ul>

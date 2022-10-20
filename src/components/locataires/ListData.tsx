@@ -27,8 +27,8 @@ export const ListData = (props: Props) => {
     return (
         <>
             <div>
-                <h2>{props.data.nom}</h2>
-                <h3>{props.data.prenom}</h3>
+                <h2 className='locataire-nom'>{props.data.nom}</h2>
+                <h3 className='locataire-prenom'>{props.data.prenom}</h3>
             </div>
             <div>
                 <p>Né le : {props.data.dateNaissance}</p>

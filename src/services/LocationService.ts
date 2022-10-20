@@ -13,6 +13,17 @@ class LocationService {
         })
     }
 
+    /**
+     * Supprime une location à la base de donnée
+     * @param id 
+     * @returns 
+     */
+    deleteLocaction = (id : Number) => {
+        return fetch(`${API_URL}/${id}`, {
+            method: 'DELETE'
+        }).then(() => this.findAllLocations()); 
+    }
+
     addLocation = (newLocation : LocationModel ) => {
         return fetch(API_URL, {
             method: 'POST',
