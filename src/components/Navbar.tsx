@@ -14,6 +14,8 @@ export const Navbar = () => {
         <div className='nav-items'>
             <Link to="/">Locataires</Link>
             <Link to="/vehicules">Vehicules</Link>
+            <Link to="/location">Louer</Link>
+            <Link to="/gestion-location">Locations</Link>
         </div>
     </nav>
   )
