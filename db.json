@@ -6,7 +6,7 @@
       "email": "jacques.francois@mail.com",
       "telephone": "0451235448",
       "dateNaissance": "25/05/1989",
-      "id": 3
+      "id": 20
     },
     {
       "nom": "Xavier",
@@ -46,7 +46,7 @@
       "dateNaissance": "23/01/1990",
       "email": "xavier.dupont@mail.com",
       "telephone": "02362514",
-      "id": 5
+      "id": 25
     },
     {
       "nom": "Flouquet",
@@ -54,7 +54,7 @@
       "dateNaissance": "18/05/1995",
       "email": "florian.flouquet2@mail.com",
       "telephone": "05456464",
-      "id": 7
+      "id": 17
     },
     {
       "nom": "Xavier",
@@ -62,7 +62,7 @@
       "dateNaissance": "23/01/1990",
       "email": "xavier.dupont@mail.com",
       "telephone": "02362514",
-      "id": 8
+      "id": 9
     }
   ],
   "vehicules": [
@@ -74,7 +74,7 @@
       "immatriculation": "AXF-12F-45F",
       "type": "citadine",
       "id": 1,
-      "disponible": true
+      "disponible": false
     },
     {
       "marque": "Renault",
@@ -144,7 +144,57 @@
       "etat": "Excellent",
       "immatriculation": "125-RXF-4GF",
       "id": 11,
-      "disponible": true
+      "disponible": false
+    }
+  ],
+  "locations": [
+    {
+      "locataire": {
+        "nom": "Jacques",
+        "prenom": "Francoise",
+        "email": "jacques.francois@mail.com",
+        "telephone": "0451235448",
+        "dateNaissance": "25/05/1989",
+        "id": 20
+      },
+      "vehicule": {
+        "marque": "Peugeot",
+        "modele": "207",
+        "etat": "Tres bien",
+        "prix": "250",
+        "immatriculation": "AXF-12F-45F",
+        "type": "citadine",
+        "id": 1,
+        "disponible": false
+      },
+      "dateDebut": "2022-10-21T00:00:00.000Z",
+      "dateFin": "2022-11-01T00:00:00.000Z",
+      "prixTotal": 2750,
+      "id": 1
+    },
+    {
+      "locataire": {
+        "nom": "Jacques",
+        "prenom": "Francoise",
+        "email": "jacques.francois@mail.com",
+        "telephone": "0451235448",
+        "dateNaissance": "25/05/1989",
+        "id": 3
+      },
+      "vehicule": {
+        "marque": "Porsche",
+        "type": "course",
+        "prix": "3500",
+        "modele": "911 GT3",
+        "etat": "Excellent",
+        "immatriculation": "125-RXF-4GF",
+        "id": 11,
+        "disponible": false
+      },
+      "dateDebut": "2022-10-27T00:00:00.000Z",
+      "dateFin": "2022-10-30T00:00:00.000Z",
+      "prixTotal": 10500,
+      "id": 2
     }
   ]
 }

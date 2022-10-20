@@ -7,6 +7,8 @@ import { VehiculesPage } from './pages/VehiculesPage';
 import { Navbar } from './components/Navbar';
 import { VehiculeLocation } from './components/locations/VehiculeLocation';
 import { LocationsPage } from './pages/LocationsPage';
+import { LouerPage } from './pages/LouerPage';
+import { GestionLocation } from './pages/GestionLocation';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path='/' element={<LocatairesPage />} />
         <Route path='/vehicules' element={<VehiculesPage />} />
         <Route path='/location' element={<LocationsPage />} />
+        <Route path='/louer' element={<LouerPage />} />
+        <Route path='/gestion-location' element={<GestionLocation />} />
       </Routes>
     </BrowserRouter>
   );

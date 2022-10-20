@@ -1,4 +1,5 @@
 import React, { VideoHTMLAttributes } from 'react'
+import { Link } from 'react-router-dom'
 import { VehiculesModel } from '../../model/VehiculeModel'
 import voitureImg from '../../styles/assets/voiture.jpg'
 
@@ -25,7 +26,9 @@ export const VehiculeLocation = (props: Props) => {
                 </div>
                 <div>
                     {props.data.disponible
-                    ? <button>Louer</button>
+                    ?   <Link to="/louer" state={props.data}>
+                            <button>Louer</button>
+                        </Link>
                     : <h2>INDISPONIBLE</h2>
                     }
                 </div>

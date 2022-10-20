@@ -1,0 +1,7 @@
+.voiture-location {
+    width: 300px;
+}
+
+.voiture-location > img {
+    width: 100%;
+}
