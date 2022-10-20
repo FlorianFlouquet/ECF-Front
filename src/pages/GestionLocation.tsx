@@ -13,6 +13,10 @@ export const GestionLocation = () => {
         locationService.findAllLocations().then((data) => setLocations(data));
     }, [])
 
+    /**
+     * Appelle la methode deleteLocation du service
+     * @param id 
+     */
     const deleteLocation = (id : Number) => {
         locationService.deleteLocaction(id).then((res) => setLocations(res))
     }

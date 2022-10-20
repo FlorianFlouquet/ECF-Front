@@ -9,12 +9,14 @@ import { VehiculeLocation } from './components/locations/VehiculeLocation';
 import { LocationsPage } from './pages/LocationsPage';
 import { LouerPage } from './pages/LouerPage';
 import { GestionLocation } from './pages/GestionLocation';
+import { ErrorPage } from './pages/ErrorPage';
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
+        <Route path='*' element={<ErrorPage />} />
         <Route path='/' element={<LocatairesPage />} />
         <Route path='/vehicules' element={<VehiculesPage />} />
         <Route path='/location' element={<LocationsPage />} />

@@ -1,0 +1,64 @@
+.pingu {
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    left: -140px;
+    top: 300px;
+    animation: pingu-moving 6s linear infinite; 
+}
+
+.error-holder {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+@keyframes pingu-moving {
+    0% {
+        left: -140px;
+        transform: rotate(0deg)
+    }
+
+    10% {
+        top: 350px
+    }
+
+    20% {
+        top: 300px
+    }
+
+    30% {
+        top: 350px
+    }
+
+    40% {
+        top: 300px
+    }
+
+    50% {
+        top: 350px
+    }
+
+    60% {
+        top: 300px
+    }
+    
+    70% {
+        top: 350px
+    }
+
+    80% {
+        top: 300px
+    }
+
+    90% {
+        top: 350px;
+    }
+
+    100% {
+        left: 110vw;
+        top: 300px;
+        transform: rotate(360deg);
+    }
+}

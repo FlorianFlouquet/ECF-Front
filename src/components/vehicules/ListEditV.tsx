@@ -20,6 +20,10 @@ export const ListEditV = (props: Props) => {
         setVehicule({...vehicule, [event.target.name] : event.target.value});
     } 
 
+    /**
+     * Change la disponibilité du véhicule
+     * @param event 
+     */
     const handleChangeDispo = (event : ChangeEvent<HTMLInputElement>) => {
         setVehicule({...vehicule, disponible : event.target.checked})
     }

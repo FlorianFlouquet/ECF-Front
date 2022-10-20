@@ -3,6 +3,10 @@ import { LocationModel } from "../model/LocationModel";
 const API_URL = "http://localhost:3000/locations"
 
 class LocationService {
+    /**
+     * Recupere toutes les locations dans la base de donnée
+     * @returns 
+     */
     findAllLocations = () => {
         return fetch(API_URL).then(res => {
             return res.json();
