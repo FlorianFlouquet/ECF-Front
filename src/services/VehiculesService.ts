@@ -1,17 +1,19 @@
+import axios from "axios";
+import { resolve } from "path";
 import { VehiculesModel } from "../model/VehiculeModel";
 
-const API_URL = "http://localhost:3000/vehicules"
+const API_URL = "http://localhost:8080/vehicles"
 
 class VehiculeService {
     /**
      * Recupere la liste des vehicules dans la base de donnée
      * @returns 
      */
-    findAllVehicules = () : any => {
+    findAllVehicules = async () : Promise<any> => {
         return fetch(API_URL).then(res => {
             return res.json();
         }).then(res => {
-            return res;
+            return res
         }).catch(err => {
             console.error(err)
         })

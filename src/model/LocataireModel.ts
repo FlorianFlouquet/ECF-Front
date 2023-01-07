@@ -1,8 +1,8 @@
 export interface LocataireModel {
-    nom: string,
-    prenom: string,
+    firstname: string,
+    surname: string,
     email: string,
-    telephone: number,
-    dateNaissance: string,
+    phoneNumber: number,
+    birthDate: string,
     id: number
 }

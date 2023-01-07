@@ -7,7 +7,7 @@ import '../styles/locatairesPage.css'
 
 export const LocationsPage = () => {
 
-    const [vehicules, setVehicules] = useState<VehiculesModel[]>([{marque: "", type: "", prix: 0, modele: "", etat: "", immatriculation: "", id: 0, disponible: true}])
+    const [vehicules, setVehicules] = useState<VehiculesModel[]>([{brand: "", type: "", price: 0, model: "", state: "", licenseNumber: "", id: 0, available: true}])
 
     useEffect(() => {
     findAllVehicules()

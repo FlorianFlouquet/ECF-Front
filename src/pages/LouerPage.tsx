@@ -20,27 +20,20 @@ export const LouerPage = () => {
     const [prix, setPrix] = useState(0);
 
     const [location, setLocation] = useState<LocationModel>({
-        locataire: {
-            nom: "",
-            prenom: "",
-            email: "",
-            telephone: 0,
-            dateNaissance: "",
-            id: 0
-        },
-        vehicule: {
-            marque: "Peugeot",
-            modele: "207",
-            etat: "Tres bien",
-            prix: 250,
-            immatriculation: "AXF-12F-45F",
+        renter: {firstname: "", surname: "", birthDate: "", phoneNumber: 0, email: "", id: 0},
+        vehicle: {
+            brand: "Peugeot",
+            model: "207",
+            state: "Tres bien",
+            price: 250,
+            licenseNumber: "AXF-12F-45F",
             type: "citadine",
             id: 0,
-            disponible: true
+            available: true
         },
-        dateDebut: new Date(),
-        dateFin: new Date(),
-        prixTotal: 0,
+        dateStart: new Date(),
+        dateEnd: new Date(),
+        totalPrice: 0,
         id: 0
     });
 
@@ -52,17 +45,17 @@ export const LouerPage = () => {
     useEffect(() => {
         getAllLocataire();
         setLocation(prevState => (
-            {...prevState, vehicule: vehicule}
+            {...prevState, vehicle: vehicule}
         ))
     }, [])
 
     useEffect(() => {
         calculerPrix();
-    }, [location.dateDebut, location.dateFin])
+    }, [location.dateStart, location.dateEnd])
 
     useEffect(() => {
         setLocation(prevState => (
-            {...prevState, prixTotal : prix}
+            {...prevState, totalPrice : prix}
         ))
     }, [prix])
 
@@ -100,14 +93,7 @@ export const LouerPage = () => {
             ));
         } else if(selectValue == "") {
             setLocation(prevState => (
-                {...prevState, locataire : {
-                    nom: "",
-                    prenom: "",
-                    email: "",
-                    telephone: 0,
-                    dateNaissance: "",
-                    id: 0
-                }}
+                {...prevState, locataire : {firstname: "", surname: "", birthDate: "", phoneNumber: 0, email: "", id: 0}}
             ));
         } 
     }
@@ -117,9 +103,9 @@ export const LouerPage = () => {
      * @param event 
      */
     const calculerPrix = () => {
-        const timeDiffInMilli = (location.dateFin.getTime() - location.dateDebut.getTime());
+        const timeDiffInMilli = (location.dateEnd.getTime() - location.dateStart.getTime());
         const timeDiffInDays = timeDiffInMilli / (1000*60*60*24);
-        const prix = timeDiffInDays * vehicule.prix;
+        const prix = timeDiffInDays * vehicule.price;
         if(prix > 0) {
             setPrix(prix);
         } else {
@@ -158,7 +144,7 @@ export const LouerPage = () => {
      * Change la disponibilité du véhicule à false
      */
     const changeDisponibility = () => {
-        vehicule.disponible = false;
+        vehicule.available = false;
         vehiculesService.patchVehicule(vehicule);
     }
 
@@ -167,11 +153,11 @@ export const LouerPage = () => {
      * @returns 
      */
     const isDatesCorrect = () : boolean => {
-        return location.dateFin.getTime() > location.dateDebut.getTime()
+        return location.dateEnd.getTime() > location.dateStart.getTime()
     }
 
     const hasSelectedLocataire = () : boolean => {
-        return location.locataire.nom !== "";
+        return location.renter.firstname !== "";
     }
 
     /**
@@ -210,9 +196,9 @@ export const LouerPage = () => {
                             <img src={voitureImg} alt="voiture-image" />
                         </figure>
                         <div>
-                            <h2>{vehicule.marque}</h2>
-                            <h3>{vehicule.modele}</h3>
-                            <h4>{vehicule.prix}€ / jour</h4>
+                            <h2>{vehicule.brand}</h2>
+                            <h3>{vehicule.model}</h3>
+                            <h4>{vehicule.price}€ / jour</h4>
                         </div>
                     </div>
                 }
@@ -222,19 +208,19 @@ export const LouerPage = () => {
                         <select onChange={handleSelect}>
                             <option value="">Veuillez choisir un locataire</option>
                             {locataires?.map((item) => (
-                                <option key={item.id} value={item.id}>{item.nom} {item.prenom}</option>
+                                <option key={item.id} value={item.id}>{item.firstname} {item.surname}</option>
                             ))}
                         </select>
                         {selectedLocataire && <p className='error'>Choisissez un locataire</p>}
-                        {location.locataire.nom !== "" &&
+                        {location.renter.firstname !== "" &&
                             <div className=''>
                                 <h2>Locataire choisi :</h2>
                                 <div>
-                                    <p><span className='gras'>Nom:</span> {location.locataire.nom}</p>
-                                    <p><span className='gras'>Prenom:</span> {location.locataire.prenom}</p>
-                                    <p><span className='gras'>Né le:</span> {location.locataire.dateNaissance}</p>
-                                    <p><span className='gras'>Email:</span> {location.locataire.email}</p>
-                                    <p><span className='gras'>Tel:</span> {location.locataire.telephone}</p>
+                                    <p><span className='gras'>Nom:</span> {location.renter.firstname}</p>
+                                    <p><span className='gras'>Prenom:</span> {location.renter.surname}</p>
+                                    <p><span className='gras'>Né le:</span> {location.renter.birthDate}</p>
+                                    <p><span className='gras'>Email:</span> {location.renter.email}</p>
+                                    <p><span className='gras'>Tel:</span> {location.renter.phoneNumber}</p>
                                 </div>
                             </div>
                         }

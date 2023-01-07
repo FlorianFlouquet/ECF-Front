@@ -8,7 +8,7 @@ interface Props {
 
 export const VehiculeFrom = (props: Props) => {
 
-    const [newVehicule, setNewVehicule] = useState<VehiculesModel>({marque: "", type: "", prix: 0, modele: "", etat: "", immatriculation: "", id: 0, disponible: true})
+    const [newVehicule, setNewVehicule] = useState<VehiculesModel>({brand: "", type: "", price: 0, model: "", state: "", licenseNumber: "", id: 0, available: true})
 
     /**
      * Change la valeur d'une clé dans la state newVehicule
@@ -26,7 +26,7 @@ export const VehiculeFrom = (props: Props) => {
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         props.addVehicule(newVehicule);
-        setNewVehicule({marque: "", type: "", prix: 0, modele: "", etat: "", immatriculation: "", id: 0, disponible: true});
+        setNewVehicule({brand: "", type: "", price: 0, model: "", state: "", licenseNumber: "", id: 0, available: true});
     }
 
     return (
@@ -34,9 +34,9 @@ export const VehiculeFrom = (props: Props) => {
         <div>
             <div className='form-column-v'>
                 <label htmlFor="marque" >Marque</label>
-                <input onChange={(event) => handleChange(event)} value={newVehicule.marque} type="text" name='marque' id='marque' />
+                <input onChange={(event) => handleChange(event)} value={newVehicule.brand} type="text" name='marque' id='marque' />
                 <label htmlFor="etat" >Etat</label>
-                <input onChange={(event) => handleChange(event)} value={newVehicule.etat} type="text" name='etat' id='etat' />
+                <input onChange={(event) => handleChange(event)} value={newVehicule.state} type="text" name='etat' id='etat' />
             </div>
         </div>
         <div>
@@ -44,15 +44,15 @@ export const VehiculeFrom = (props: Props) => {
                 <label htmlFor="type" >Type</label>
                 <input onChange={(event) => handleChange(event)} value={newVehicule.type} type="text" name='type' id='type' />
                 <label htmlFor="immatriculation" >Immatriculation</label>
-                <input onChange={(event) => handleChange(event)} value={newVehicule.immatriculation} type="text" name='immatriculation' id='immatriculation' />
+                <input onChange={(event) => handleChange(event)} value={newVehicule.licenseNumber} type="text" name='immatriculation' id='immatriculation' />
             </div>    
         </div>
         <div>
             <div className='form-column-v'>
                 <label htmlFor="Modele" >Modele</label>
-                <input onChange={(event) => handleChange(event)} value={newVehicule.modele} type="text" name='modele' id='modele' />
+                <input onChange={(event) => handleChange(event)} value={newVehicule.model} type="text" name='modele' id='modele' />
                 <label htmlFor="Prix" >Prix</label>
-                <input onChange={(event) => handleChange(event)} value={newVehicule.prix} type="text" name='prix' id='prix' />
+                <input onChange={(event) => handleChange(event)} value={newVehicule.price} type="text" name='prix' id='prix' />
             </div>
         </div>
         <div>

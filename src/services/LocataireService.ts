@@ -1,6 +1,6 @@
 import { LocataireModel } from "../model/LocataireModel";
 
-const API_URL = "http://localhost:3000/locataires"
+const API_URL = "http://localhost:8080/users"
 
 class LocataireService {
     /**

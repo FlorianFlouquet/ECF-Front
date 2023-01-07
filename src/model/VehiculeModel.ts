@@ -1,10 +1,10 @@
 export interface VehiculesModel {
-    marque: string,
+    brand: string,
     type: string,
-    modele: string,
-    etat: string,
-    immatriculation: string,
-    prix: number,
+    model: string,
+    state: string,
+    licenseNumber: string,
+    price: number,
     id: number,
-    disponible: boolean
+    available: boolean
 }

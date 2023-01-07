@@ -8,8 +8,8 @@ import '../styles/locatairesPage.css'
 
 export const LocatairesPage = () => {
 
-  const [locataires, setLocataires] = useState<LocataireModel[]>([{nom: "", prenom: "", dateNaissance: "", telephone: 0, email: "", id: 0}]);
-  const [sentData, setSentData] = useState<LocataireModel[]>([{nom: "", prenom: "", dateNaissance: "", telephone: 0, email: "", id: 0}]);
+  const [locataires, setLocataires] = useState<LocataireModel[]>([{firstname: "", surname: "", birthDate: "", phoneNumber: 0, email: "", id: 0}]);
+  const [sentData, setSentData] = useState<LocataireModel[]>([{firstname: "", surname: "", birthDate: "", phoneNumber: 0, email: "", id: 0}]);
   const [filter, setFilter] = useState<string>("");
   const [filterContent, setFilterContent] = useState<string>("");
 
@@ -60,7 +60,7 @@ export const LocatairesPage = () => {
     let array : LocataireModel[];
     switch (filter) {
       case "nom":
-        array = locataires.filter((item) => item.nom === filterContent);
+        array = locataires.filter((item) => item.firstname === filterContent);
         if(array.length > 0) {
           setSentData(array);
         } else {
@@ -68,7 +68,7 @@ export const LocatairesPage = () => {
         }
         break;
       case "prenom":
-        array = locataires.filter((item) => item.prenom === filterContent);
+        array = locataires.filter((item) => item.surname === filterContent);
         if(array.length > 0) {
           setSentData(array);
         } else {
@@ -76,7 +76,7 @@ export const LocatairesPage = () => {
         }
         break;
       case "dateNaissance":
-        array = locataires.filter((item) => item.dateNaissance === filterContent);
+        array = locataires.filter((item) => item.birthDate === filterContent);
         if(array.length > 0) {
           setSentData(array);
         } else {
@@ -84,7 +84,7 @@ export const LocatairesPage = () => {
         }
         break;
       default:
-        array = locataires.filter((item) => item.nom === filterContent);
+        array = locataires.filter((item) => item.firstname === filterContent);
         if(array.length > 0) {
           setSentData(array);
         } else {

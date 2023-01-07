@@ -1,6 +1,6 @@
 import { LocationModel } from "../model/LocationModel";
 
-const API_URL = "http://localhost:3000/locations"
+const API_URL = "http://localhost:8080/rentals"
 
 class LocationService {
     /**

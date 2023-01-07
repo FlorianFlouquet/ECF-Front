@@ -38,7 +38,7 @@ export const Vehicule = (props : Props) => {
     }
 
     return (
-        <li  key={props.data.modele} className='locataire'>
+        <li  key={props.data.model} className='locataire'>
             <div className='vehicule-content'>
                 {canEdit ? 
                     <ListEditV delete={deleteVehicule} editLocataire={editVehicule} changeEdit={changeEdit} data={props.data} />

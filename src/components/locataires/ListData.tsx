@@ -27,13 +27,13 @@ export const ListData = (props: Props) => {
     return (
         <>
             <div>
-                <h2 className='locataire-nom'>{props.data.nom}</h2>
-                <h3 className='locataire-prenom'>{props.data.prenom}</h3>
+                <h2 className='locataire-nom'>{props.data.firstname}</h2>
+                <h3 className='locataire-prenom'>{props.data.surname}</h3>
             </div>
             <div>
-                <p>Né le : {props.data.dateNaissance}</p>
+                <p>Né le : {props.data.birthDate}</p>
                 <p>Email : {props.data.email}</p>
-                <p>Téléphone : {props.data.telephone}</p>
+                <p>Téléphone : {props.data.phoneNumber}</p>
             </div>
             <div>
                 <button onClick={() => deleteLocataire(props.data.id)}>Supprimer</button>

@@ -23,15 +23,15 @@ export const Location = (props : Props) => {
                     </figure>
                 </div>
                 <div>
-                    <h2>{props.data.vehicule.modele}</h2>
-                    <p><span className='gras'>Loué du </span>{props.data.dateDebut.toString().slice(0, -14)}</p> 
-                    <p><span className='gras'>au </span>{props.data.dateFin.toString().slice(0, -14)}</p>
+                    <h2>{props.data.vehicle.model}</h2>
+                    <p><span className='gras'>Loué du </span>{props.data.dateStart.toString()}</p> 
+                    <p><span className='gras'>au </span>{props.data.dateEnd.toString()}</p>
                 </div>
                 <div>
-                    <h3>{props.data.locataire.nom} {props.data.locataire.prenom}</h3>
-                    <p>{props.data.locataire.dateNaissance}</p>
-                    <p>{props.data.locataire.email}</p>
-                    <p>{props.data.locataire.telephone}</p>
+                    <h3>{props.data.renter.firstname} {props.data.renter.surname}</h3>
+                    <p>{props.data.renter.birthDate}</p>
+                    <p>{props.data.renter.email}</p>
+                    <p>{props.data.renter.phoneNumber}</p>
                 </div>
                 <div>
                     <button onClick={deleteLocation}>Delete</button>

@@ -7,7 +7,7 @@ interface Props {
 
 export const LocataireFrom = (props: Props) => {
 
-    const [newLocataire, setNewLocataire] = useState<LocataireModel>({nom:'', prenom: '',dateNaissance: '', email: '', telephone: 0, id: 0})
+    const [newLocataire, setNewLocataire] = useState<LocataireModel>({firstname: "", surname: "", birthDate: "", phoneNumber: 0, email: "", id: 0})
 
     /**
      * Modifie la valeur d'une clé dans la state newLocataire
@@ -25,7 +25,7 @@ export const LocataireFrom = (props: Props) => {
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         props.addLocataire(newLocataire);
-        setNewLocataire({nom:'', prenom: '',dateNaissance: '', email: '', telephone: 0, id: 0});
+        setNewLocataire({firstname: "", surname: "", birthDate: "", phoneNumber: 0, email: "", id: 0});
     }
 
     return (
@@ -33,15 +33,15 @@ export const LocataireFrom = (props: Props) => {
         <div>
             <div className='form-column'>
             <label htmlFor="nom" >Nom</label>
-            <input onChange={(event) => handleChange(event)} value={newLocataire.nom} type="text" name='nom' id='nom' />
+            <input onChange={(event) => handleChange(event)} value={newLocataire.firstname} type="text" name='nom' id='nom' />
             <label htmlFor="prenom" >Prenom</label>
-            <input onChange={(event) => handleChange(event)} value={newLocataire.prenom} type="text" name='prenom' id='prenom' />
+            <input onChange={(event) => handleChange(event)} value={newLocataire.surname} type="text" name='prenom' id='prenom' />
             </div>
         </div>
         <div>
             <div className='form-column'>
             <label htmlFor="dateNaissance" >Date de naissance</label>
-            <input onChange={(event) => handleChange(event)} value={newLocataire.dateNaissance} type="text" name='dateNaissance' id='dateNaissance' />
+            <input onChange={(event) => handleChange(event)} value={newLocataire.birthDate} type="text" name='dateNaissance' id='dateNaissance' />
             <label htmlFor="email" >Email</label>
             <input onChange={(event) => handleChange(event)} value={newLocataire.email} type="email" name='email' id='email' />
             </div>    
@@ -49,7 +49,7 @@ export const LocataireFrom = (props: Props) => {
         <div>
             <div className='form-column'>
             <label htmlFor="telephone" >Telephone</label>
-            <input onChange={(event) => handleChange(event)} value={newLocataire.telephone} type="text" name='telephone' id='telephone' />
+            <input onChange={(event) => handleChange(event)} value={newLocataire.phoneNumber} type="text" name='telephone' id='telephone' />
             <button type='submit'>Ajouter</button>
             </div>
         </div>

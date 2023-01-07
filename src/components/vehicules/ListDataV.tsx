@@ -28,18 +28,18 @@ export const ListDataV = (props: Props) => {
     return (
         <>
             <div>
-                <h2>{props.data.modele}</h2>
-                <h3>{props.data.prix}€</h3>
+                <h2>{props.data.brand}</h2>
+                <h3>{props.data.price}€</h3>
                 <figure className='voiture'>
                     <img src={voitureImg} alt="car-image    " />
                 </figure>
             </div>
             <div>
-                <p>Immatriculation : {props.data.immatriculation}</p>
-                <p>Etat : {props.data.etat}</p>
+                <p>Immatriculation : {props.data.licenseNumber}</p>
+                <p>Etat : {props.data.state}</p>
                 <p>Type : {props.data.type}</p>
-                <p>Modele : {props.data.marque}</p>
-                <p>Disponible : {props.data.disponible ? "Oui" : "Non"}</p>
+                <p>Modele : {props.data.brand}</p>
+                <p>Disponible : {props.data.available ? "Oui" : "Non"}</p>
             </div>
             <div>
                 <button onClick={() => deleteLocataire(props.data.id)}>Supprimer</button>

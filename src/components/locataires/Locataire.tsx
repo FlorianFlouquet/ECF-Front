@@ -38,7 +38,7 @@ export const Locataire = (props : Props) => {
     }
 
     return (
-        <li  key={props.data.dateNaissance} className='locataire'>
+        <li  key={props.data.birthDate} className='locataire'>
             <div className='locataire-content'>
                 {canEdit ? 
                     <ListEdit delete={deleteLocataire} editLocataire={editLocataire} changeEdit={changeEdit} data={props.data} />

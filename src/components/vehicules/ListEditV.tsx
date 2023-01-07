@@ -25,7 +25,7 @@ export const ListEditV = (props: Props) => {
      * @param event 
      */
     const handleChangeDispo = (event : ChangeEvent<HTMLInputElement>) => {
-        setVehicule({...vehicule, disponible : event.target.checked})
+        setVehicule({...vehicule, available : event.target.checked})
     }
 
     /**
@@ -49,15 +49,15 @@ export const ListEditV = (props: Props) => {
     return (
         <>
             <div>
-                <p>modele: <input name='modele' onChange={(event) => handleChange(event)} type="text" value={vehicule.modele}/></p>
-                <p>Prix: <input name='prix' onChange={(event) => handleChange(event)} type="text" value={vehicule.prix}/></p>
+                <p>modele: <input name='modele' onChange={(event) => handleChange(event)} type="text" value={vehicule.model}/></p>
+                <p>Prix: <input name='prix' onChange={(event) => handleChange(event)} type="text" value={vehicule.price}/></p>
             </div>
             <div>
-                <p>Immatriculation : <input name='immatriculation' onChange={(event) => handleChange(event)} type="text" value={vehicule.immatriculation} /></p>
-                <p>Etat : <input name='etat' onChange={(event) => handleChange(event)} type="text" value={vehicule.etat} /></p>
+                <p>Immatriculation : <input name='immatriculation' onChange={(event) => handleChange(event)} type="text" value={vehicule.licenseNumber} /></p>
+                <p>Etat : <input name='etat' onChange={(event) => handleChange(event)} type="text" value={vehicule.state} /></p>
                 <p>Type : <input name='type' onChange={(event) => handleChange(event)} type="text" value={vehicule.type} /></p>
-                <p>Marque : <input name='marque' onChange={(event) => handleChange(event)} type="text" value={vehicule.marque} /></p>
-                <p>disponible: <input name='disponible' onChange={(event) => handleChangeDispo(event)} type="checkbox" checked={vehicule.disponible} /></p>
+                <p>Marque : <input name='marque' onChange={(event) => handleChange(event)} type="text" value={vehicule.brand} /></p>
+                <p>disponible: <input name='disponible' onChange={(event) => handleChangeDispo(event)} type="checkbox" checked={vehicule.available} /></p>
             </div>
             <div>
                 <button onClick={() => deleteLocataire(props.data.id)}>Supprimer</button>

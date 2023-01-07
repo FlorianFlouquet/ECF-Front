@@ -40,13 +40,13 @@ export const ListEdit = (props: Props) => {
     return (
         <>
             <div>
-                <p>Nom: <input name='nom' onChange={(event) => handleChange(event)} type="text" value={locataire.nom}/></p>
-                <p>Prenom: <input name='prenom' onChange={(event) => handleChange(event)} type="text" value={locataire.prenom}/></p>
+                <p>Nom: <input name='nom' onChange={(event) => handleChange(event)} type="text" value={locataire.firstname}/></p>
+                <p>Prenom: <input name='prenom' onChange={(event) => handleChange(event)} type="text" value={locataire.surname}/></p>
             </div>
             <div>
-                <p>Né le : <input name='dateNaissance' onChange={(event) => handleChange(event)} type="text" value={locataire.dateNaissance} /></p>
+                <p>Né le : <input name='dateNaissance' onChange={(event) => handleChange(event)} type="text" value={locataire.birthDate} /></p>
                 <p>Email : <input name='email' onChange={(event) => handleChange(event)} type="text" value={locataire.email} /></p>
-                <p>Téléphone : <input name='telephone' onChange={(event) => handleChange(event)} type="text" value={locataire.telephone} /></p>
+                <p>Téléphone : <input name='telephone' onChange={(event) => handleChange(event)} type="text" value={locataire.phoneNumber} /></p>
             </div>
             <div>
                 <button onClick={() => deleteLocataire(props.data.id)}>Supprimer</button>

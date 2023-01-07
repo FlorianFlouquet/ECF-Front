@@ -9,8 +9,8 @@ import '../styles/locatairesPage.css'
 
 export const VehiculesPage = () => {
 
-  const [vehicules, setVehicules] = useState<VehiculesModel[]>([{marque: "", type: "", prix: 0, modele: "", etat: "", immatriculation: "", id: 0, disponible: true}])
-  const [sentData, setSentData] = useState<VehiculesModel[]>([{marque: "", type: "", prix: 0, modele: "", etat: "", immatriculation: "", id: 0, disponible: true}]);
+  const [vehicules, setVehicules] = useState<VehiculesModel[]>([{brand: "", type: "", price: 0, model: "", state: "", licenseNumber: "", id: 0, available: true}])
+  const [sentData, setSentData] = useState<VehiculesModel[]>([{brand: "", type: "", price: 0, model: "", state: "", licenseNumber: "", id: 0, available: true}]);
   const [filter, setFilter] = useState<string>("");
   const [filterContent, setFilterContent] = useState<string>("");
 
@@ -26,7 +26,9 @@ export const VehiculesPage = () => {
    * Appelle la methode findAllVehicules du service
    */
   const findAllVehicules = () => {
-    vehiculesService.findAllVehicules().then((res: any) => {setVehicules(res); setSentData(res)})
+    vehiculesService.findAllVehicules().then((res: any) => {
+      setVehicules(res); setSentData(res)
+    })
   }
 
   /**
@@ -61,7 +63,7 @@ export const VehiculesPage = () => {
     let array : VehiculesModel[];
     switch (filter) {
       case "marque":
-        array = vehicules.filter((item) => item.marque === filterContent);
+        array = vehicules.filter((item) => item.brand === filterContent);
         if(array.length > 0) {
           setSentData(array);
         } else {
@@ -69,7 +71,7 @@ export const VehiculesPage = () => {
         }
         break;
       case "modele":
-        array = vehicules.filter((item) => item.modele === filterContent);
+        array = vehicules.filter((item) => item.model === filterContent);
         if(array.length > 0) {
           setSentData(array);
         } else {
@@ -85,7 +87,7 @@ export const VehiculesPage = () => {
         }
         break;
       default:
-        array = vehicules.filter((item) => item.etat === filterContent);
+        array = vehicules.filter((item) => item.state === filterContent);
         if(array.length > 0) {
           setSentData(array);
         } else {
